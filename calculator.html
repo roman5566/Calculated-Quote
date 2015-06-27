@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<!--[if lte IE 7]> <html class="ie7"> <![endif]-->
+<!--[if IE 8]>     <html class="ie8"> <![endif]-->
+<!--[if IE 9]>     <html class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+	<html class=" js rgba borderradius boxshadow textshadow opacity cssgradients fontface generatedcontent" style="">
+<!--<![endif]-->
+    <head>
+        <meta charset="utf-8"></meta>
+        <title>
+            Montway Calculator
+        </title>
+        <meta content="noindex,follow" name="robots"></meta>
+        <meta content="none" name="msapplication-config"></meta>
+        <meta content="IE=Edge" http-equiv="X-UA-Compatible"></meta>
+        <script type="text/javascript" src="http://bam.nr-data.net/1/4043f96e4d?a=14025934&pl=1435431570…2:%7B%22ty%22:2%7D%7D&at=QkZXEwlCREs%3D&jsonp=NREUM.setToken"></script>
+        <script src="http://js-agent.newrelic.com/nr-632.min.js"></script>
+        <script type="text/javascript">
+
+            (window.NREUM||(NREUM={})).loader_config={xpid:"Uw…
+
+        </script>
+        <meta content="width=device-width, initial-scale=1.0, user-scalable = no" name="viewport"></meta>
+        <!--[[ CSS Styles ]] -->
+        <link href="/includes2/css/redmond/jquery-ui-1.8.2.custom.css" type="text/css" rel="stylesheet"></link>
+        <link href="/includes2/css/extcalc/main.css" type="text/css" rel="stylesheet"></link>
+        <link href="/includes2/css/extcalc/calculator.css" type="text/css" rel="stylesheet"></link>
+        <link href="/includes2/css/extcalc/redesign.css" type="text/css" rel="stylesheet"></link>
+        <link href="http://fonts.googleapis.com/css?family=Droid+Sans+Mono" type="text/css" rel="stylesheet"></link>
+        <!--
+
+         [[ Provides fallback classes for less capable bro…
+
+        -->
+        <script src="/includes2/js/modernizr.custom.18239.js" type="text/javascript"></script>
+        <!--
+
+         [[ Provides media query capability to old IE ]]
+
+        -->
+        <script src="/includes2/js/respond.min.js" type="text/javascript"></script>
+    </head>
+    <body id="quote-calculator" class="redesigned">
+        <div id="primary-content">
+            <!--
+
+            [[ Header ]]
+
+            -->
+            <div class="header-logo">
+                <div class="container">
+                    <img class="logo" alt="Montway Auto Transport" src="/includes2/css/extcalc/logo_montway-white.png"></img>
+                    <h3>
+
+                        Car Shipping Calculator
+
+                    </h3>
+                </div>
+            </div>
+            <!-- [[ Calculator ]] -->
+            <div class="calculator">
+                <div class="container">
+                    <form id="quoteform" action="https://www.montway.com/quote/shipping-rates" method="post" name="quoteform">
+                        <fieldset id="field_locations">
+                            <div class="control-group span6 required">
+                                <div class="controls">
+                                    <input id="fromtext" class="calculator-input input-wide city_input" type="text" placeholder="From: ZIP -or- City, State" name="fromtext"></input>
+
+<select id="fromselect" style="display:none;" name="fromselect">
+
+            <option value="">
+
+                Select One
+
+            </option>
+        </select>
+    </div>
+
+</div>
+<div class="control-group span6 required">
+
+    <div class="controls">
+        <input id="totext" class="calculator-input input-wide city_input" type="text" placeholder="To:     ZIP -or- City, State" value="" name="totext"></input>
+
+<select id="toselect" style="display:none;" name="toselect">
+
+                <option value="">
+
+                    Select One
+
+                </option>
+            </select>
+        </div>
+    </div>
+
+</fieldset>
+<fieldset id="field_vehicle-type">
+
+    <div class="control-group required span6 clearfix">
+        ::before
+        <select id="automake" onchange="updateModel(document.quoteform.automodel, this.options[this.selectedIndex].value);" name="automake">
+
+        <option value="">
+            Select Make
+        </option>
+        <option value="Acura">
+            Acura
+        </option>
+        <option value="Alfa Romeo">
+            Alfa Romeo
+        </option>
+        <option value="AMC">
+            AMC
+        </option>
+        <option value="Aston Martin">
+            Aston Martin
+        </option>
+        <option value="ATV">
+            ATV
+        </option>
+        <option value="Auburn">
+            Auburn
+        </option>
+        <option value="Audi">
+            Audi
+        </option>
+        <option value="Austin-Healey">
+            Austin-Healey
+        </option>
+        <option value="Bentley">
+            Bentley
+        </option>
+        <option value="BMW">
+            BMW
+        </option>
+        <option value="Bricklin">
+            Bricklin
+        </option>
+        <option value="Buick">
+            Buick
+        </option>
+        <option value="Cadillac">
+            Cadillac
+        </option>
+        <option value="Chevy">
+            Chevy
+        </option>
+        <option value="Chrysler">
+            Chrysler
+        </option>
+        <option value="Citroen">
+            Citroen
+        </option>
+        <option value="Daewoo">
+            Daewoo
+        </option>
+        <option value="Daihatsu">
+            Daihatsu
+        </option>
+        <option value="Datsun">
+            Datsun
+        </option>
+        <option value="Delorean">
+            Delorean
+        </option>
+        <option value="Dodge">
+            Dodge
+        </option>
+        <option value="Eagle">
+            Eagle
+        </option>
+        <option value="Edsel">
+            Edsel
+        </option>
+        <option value="Ferrari">
+            Ferrari
+        </option>
+        <option value="Fiat">
+            Fiat
+
+        </option>
+        <option value="Fisker">
+
+            Fisker
+
+        </option>
+        <option value="Ford">
+
+            Ford
+
+        </option>
+        <option value="Geo">
+            Geo
+        </option>
+        <option value="GMC">
+            GMC
+        </option>
+        <option value="Graham">
+            Graham
+        </option>
+        <option value="Harley Davidson">
+            Harley Davidson
+        </option>
+        <option value="Honda">
+            Honda
+        </option>
+        <option value="Hudson">
+            Hudson
+        </option>
+        <option value="Hummer">
+            Hummer
+        </option>
+        <option value="Hyundai">
+            Hyundai
+        </option>
+        <option value="Infiniti">
+            Infiniti
+        </option>
+        <option value="International">
+            International
+        </option>
+        <option value="Isuzu">
+            Isuzu
+        </option>
+        <option value="Jaguar">
+            Jaguar
+        </option>
+        <option value="Jeep">
+            Jeep
+        </option>
+        <option value="Kia">
+            Kia
+        </option>
+        <option value="Lamborghini">
+            Lamborghini
+        </option>
+        <option value="Land Rover">
+            Land Rover
+        </option>
+        <option value="Lasalle">
+            Lasalle
+        </option>
+        <option value="Lexus">
+            Lexus
+        </option>
+        <option value="Lincoln">
+            Lincoln
+        </option>
+        <option value="Lotus">
+            Lotus
+        </option>
+        <option value="Marmon">
+            Marmon
+        </option>
+        <option value="Maserati">
+            Maserati
+        </option>
+        <option value="Maybach">
+            Maybach
+        </option>
+        <option value="Mazda">
+            Mazda
+        </option>
+        <option value="McLaren">
+            McLaren
+        </option>
+        <option value="Mercedes-Benz">
+            Mercedes-Benz
+        </option>
+        <option value="Mercury">
+            Mercury
+        </option>
+        <option value="Merkur">
+            Merkur
+        </option>
+        <option value="MG">
+            MG
+        </option>
+        <option value="MINI">
+            MINI
+        </option>
+        <option value="Mitsubishi">
+            Mitsubishi
+        </option>
+        <option value="Morgan">
+            Morgan
+        </option>
+        <option value="Nash">
+            Nash
+        </option>
+        <option value="Nissan">
+            Nissan
+        </option>
+        <option value="Oldsmobile">
+            Oldsmobile
+        </option>
+        <option value="Opel">
+            Opel
+        </option>
+        <option value="Packard">
+            Packard
+        </option>
+        <option value="Panoz">
+            Panoz
+        </option>
+        <option value="Plymouth">
+            Plymouth
+        </option>
+        <option value="Pontiac">
+            Pontiac
+        </option>
+        <option value="Porsche">
+            Porsche
+        </option>
+        <option value="Renault">
+            Renault
+        </option>
+        <option value="Rolls-Royce">
+            Rolls-Royce
+        </option>
+        <option value="Saab">
+            Saab
+        </option>
+        <option value="Saturn">
+            Saturn
+        </option>
+        <option value="Scion">
+            Scion
+        </option>
+        <option value="Smart">
+            Smart
+        </option>
+        <option value="Sterling">
+            Sterling
+        </option>
+        <option value="Studebaker">
+
+            Studebaker
+
+        </option>
+        <option value="Subaru">
+            Subaru
+        </option>
+        <option value="Sunbeam">
+            Sunbeam
+        </option>
+        <option value="Suzuki">
+            Suzuki
+        </option>
+        <option value="Talbo">
+            Talbo
+        </option>
+        <option value="Tesla">
+            Tesla
+        </option>
+        <option value="Toyota">
+            Toyota
+        </option>
+        <option value="Triumph">
+            Triumph
+        </option>
+        <option value="Vanden Plas">
+            Vanden Plas
+        </option>
+        <option value="Volkswagen">
+            Volkswagen
+        </option>
+        <option value="Volvo">Volvo</option>
+        <option value="Willys">
+            Willys
+        </option>
+        <option value="Yugo">
+            Yugo
+        </option>
+    </select>
+    ::after
+</div>
+<div class="control-group required span6 clearfix">
+    ::before
+    <div class="controls">
+        <select id="automodel" name="automodel">
+
+                <option value="">
+                    Select Model
+                </option>
+            </select>
+        </div>
+        ::after
+    </div>
+
+</fieldset>
+<fieldset id="field_transport-type" class="form-horizontal">
+
+    <div class="control-group required">
+        <div class="control-label clearfix">
+            ::before
+            <span class="label-title">
+
+                Vehicle Condition
+
+            </span>
+            <a id="tip-toggle_car-condition" href="javascript:;">
+
+            <img class="icon" alt="i" src="/includes2/css/extcalc/icon_info-blue.png"></img>
+        </a>
+        <div id="tip_car-condition" class="tooltip-container" style="opacity: 0; display: none;">
+            <div class="container">
+                <p>
+                    <strong>
+
+                        Running Vehicle
+
+                    </strong>
+                    <br></br>
+
+                    Considered when the car is able to be driven under…
+
+                </p>
+                <hr></hr>
+                <p>
+                    <strong>
+
+                        Non-running Vehicle
+
+                    </strong>
+                    <br></br>
+
+                    Autos with operating engines that are unable to mo…
+
+                </p>
+            </div>
+            <div class="caret"></div>
+        </div>
+        ::after
+    </div>
+    <div class="controls clearfix"></div>
+
+</div>
+<div class="control-group required">
+
+    <div class="control-label clearfix">
+        ::before
+        <span class="label-title">
+
+            Transport Type
+
+        </span>
+        <a id="tip-toggle_transport-type" href="javascript:;">
+
+        <img class="icon" alt="i" src="/includes2/css/extcalc/icon_info-blue.png"></img>
+    </a>
+    <div id="tip_transport-type" class="tooltip-container" style="opacity: 0; display: none;">
+        <div class="container">
+            <p>
+                <strong>
+
+                    Open Trailer
+
+                </strong>
+                <br></br>
+
+                Cars are exposed to weather elements like rain or …
+
+                <em>
+
+                    safe & secure
+
+                </em>
+
+                .
+
+            </p>
+            <hr></hr>
+            <p>
+                <strong>
+
+                    Enclosed Trailer
+
+                </strong>
+                <br></br>
+
+                Cars are not exposed to weather elements. The pref…
+
+            </p>
+        </div>
+        <div class="caret"></div>
+    </div>
+    ::after
+
+</div>
+<div class="controls clearfix">
+
+    ::before
+    <label class="radio checked ">
+
+    <input type="radio" checked="checked" value="OPEN" name="trailer"></input>
+
+     Open
+                                        
+
+</label>
+<label class="radio">
+
+    <input type="radio" value="ENCLOSED" name="trailer"></input>
+
+                 Enclosed
+                                                    
+
+            </label>
+            ::after
+        </div>
+    </div>
+
+</fieldset>
+<input id="calculateBtn" class="btn btn-large btn-block btn-submit" type="submit" onclick="getDistance(); return false;" value="Calculate Rate"></input>
+
+            <input id="distance" type="hidden" value="" name="distance"></input>
+            <input id="srcDistnoti" type="hidden" value="" name="srcDistnoti"></input>
+            <input id="desDistnoti" type="hidden" value="" name="desDistnoti"></input>
+            <input id="distnoti" type="hidden" value="" name="distnoti"></input>
+            <input id="fromCity" type="hidden" value="" name="fromCity"></input>
+            <input id="fromState" type="hidden" value="" name="fromState"></input>
+            <input id="fromZipGiven" type="hidden" value="" name="fromZipGiven"></input>
+            <input id="fromZip" type="hidden" value="" name="fromZip"></input>
+            <input id="fromCounty" type="hidden" value="" name="fromCounty"></input>
+            <input id="fromLat" type="hidden" value="" name="fromLat"></input>
+            <input id="fromLong" type="hidden" value="" name="fromLong"></input>
+            <input id="fromExcludedState" type="hidden" value="" name="fromExcludedState"></input>
+            <input id="fromStateFullName" type="hidden" value="" name="fromStateFullName"></input>
+            <input id="fromZipCount" type="hidden" value="" name="fromZipCount"></input>
+            <input id="toCity" type="hidden" value="" name="toCity"></input>
+            <input id="toState" type="hidden" value="" name="toState"></input>
+            <input id="toZipGiven" type="hidden" value="" name="toZipGiven"></input>
+            <input id="toZip" type="hidden" value="" name="toZip"></input>
+            <input id="toCounty" type="hidden" value="" name="toCounty"></input>
+            <input id="toLat" type="hidden" value="" name="toLat"></input>
+            <input id="toLong" type="hidden" value="" name="toLong"></input>
+            <input id="toExcludedState" type="hidden" value="" name="toExcludedState"></input>
+            <input id="toStateFullName" type="hidden" value="" name="toStateFullName"></input>
+            <input id="toZipCount" type="hidden" value="" name="toZipCount"></input>
+            <input id="calcExt" type="hidden" value="1" name="calcExt"></input>
+            <input id="src" type="hidden" value="wordpress-calculator" name="src"></input>
+            <input id="ho-aid" type="hidden" value="" name="ho-aid"></input>
+            <input id="ho-tid" type="hidden" value="" name="ho-tid"></input>
+            <input id="processStep" type="hidden" value="QUOTE" name="processStep"></input>
+            <input id="calculated_from" type="hidden" value="affiliate" name="calculated_from"></input>
+            <input id="theme" type="hidden" value="" name="theme"></input>
+        </form>
+    </div>
+
+</div>
+<!--
+
+[[ Footer ]]
+
+-->
+
+<div class="calculator-footer">
+
+    <div class="container">
+        <h3>
+            <span class="nowrap">
+
+                Questions? 
+
+                <span class="callout-important">
+
+                    888-666-8929
+
+                </span>
+            </span>
+        </h3>
+        <a id="shipping-with-montway-toggle_learn" class="btn btn-small" href="javascript:;">
+
+                Learn more
+
+            </a>
+        </div>
+    </div>
+
+</div>
+<div id="shipping-with-montway" style="display: none;">
+
+    <!--
+
+    [[ Learn More ]]
+
+    -->
+    <div class="shipping-with-montway-container">
+        <div class="container">
+            <img class="logo" alt="Montway Auto Transport" src="/includes2/css/extcalc/logo_montway-white.png"></img>
+            <p>
+
+                Montway made it easy to calculate car shipping pri…
+
+            </p>
+            <hr></hr>
+            <ul>
+                <li>
+
+                    Instant price quotes directly on the page.
+
+                </li>
+                <li>
+
+                    Easy to use; no personal info required.
+
+                </li>
+                <li>
+
+                    No sales pitch; you decide when to book.
+
+                </li>
+                <li>
+
+                    Affordable rates
+
+                </li>
+                <li>
+
+                    Licensed and insured; 5 star customer rated compan…
+
+                </li>
+            </ul>
+            <hr></hr>
+            <p>
+
+                At Montway our reputation speaks for itself. Custo…
+
+            </p>
+            <h4 class="slogan">
+
+                Delivering your car, 
+
+                <span class="nowrap">
+
+                    and peace of mind.
+
+                </span>
+            </h4>
+            <div class="action-box">
+                <a id="primary-content-toggle" class="btn btn-small btn-block" href="javascript:;">
+
+                                Go Back
+
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--
+
+            [[ Scripts (Place here for faster loading) ]]
+
+            -->
+            <script src="/includes2/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+            <script src="/includes2/js/jquery-ui-1.8.22.custom.min.js" type="text/javascript"></script>
+            <script src="/includes2/js/jquery.hoverIntent.minified.js" type="text/javascript"></script>
+            <script src="/includes2/js/utils.js" type="text/javascript"></script>
+            <script src="/includes2/js/quote_calc.js" type="text/javascript"></script>
+            <script src="/includes2/js/makemodeldata.js" type="text/javascript"></script>
+            <script src="/includes2/js/makemodelcontrol.js" type="text/javascript"></script>
+            <script src="/includes2/js/mapsapi.js" type="text/javascript"></script>
+            <script src="/includes2/js/Placeholders.min.js" type="text/javascript"></script>
+            <!--
+
+            [[ Modernizr Fallback Scripts ]]
+
+            -->
+            <script type="text/javascript">
+
+
+
+                          Modernizr.load({
+                                test:…
+
+            </script>
+             <script type="text/javascript">
+
+
+
+                	        $("label.radio").click(function(el){
+                				$(this).find('input').prop('checked', true);
+                				$(this).find('input').trigger("change");
+                			});
+
+                			$("label.radio input").change(function(){
+                				$(this).parent().parent().find(".checked").removeClass("checked");
+
+                				if($(this).prop('checked') == true) {
+                			    	$(this).parent().addClass("checked");
+                				}
+                			});
+
+                			$('.custom-select').click(function(){
+                				$(this).find("select").focus();
+                			});
+
+                			$('.custom-select').each(function(){
+                				var iSelectHeight = parseInt($(this).find("select").height());
+                				var iAvailableHeight = parseInt($(this).height());
+
+                				$(this).find("select").css("margin-top", parseInt((iAvailableHeight - iSelectHeight)/2) + 'px');
+                			});
+
+                          $(document).ready(function() {
+
+                          	              // Hides the tooltip-containers
+                              $('.tooltip-container').animate({
+                                    opacity: 0,
+                                    height: 'toggle',
+                                    width: 'toggle'
+                                  }, 0);
+                             
+                              // Shows Car Condition Tip
+                              $('#tip-toggle_car-condition').hoverIntent(function(){
+                                 $('#tip_car-condition').delay(200).animate({
+                                    opacity: 1,
+                                    height: 'toggle',
+                                    width: 'toggle'
+                                  }, 150);
+                              });
+
+                              // Shows Transport Type Tip
+                              $('#tip-toggle_transport-type').hoverIntent(function(){
+                                 $('#tip_transport-type').delay(200).animate({
+                                    opacity: 1,
+                                    height: 'toggle',
+                                    width: 'toggle'
+                                  }, 150);
+                              });
+
+                              // Hides the Secondary Content
+                              $('#shipping-with-montway').hide();
+
+                              // Shows Calculator
+                              $('#shipping-with-montway-toggle_learn, #primary-content-toggle').click(function(){
+                                 $('#primary-content, #shipping-with-montway').toggle();
+                              });
+                          });
+			</script>
+            <!--[[ Calculator functionality ]]-->
+            <script type="text/javascript">
+
+
+                            function updateDisplay(which, city, state, zip)
+                            {
+                                newAddr = city + ", " + state;
+                                var thisDisplay = document.getElementById(which + "text");
+                                if (thisDisplay != null) thisDisplay.value = newAddr;
+                            }
+
+                            var t;
+                            var focused_class = '';
+                            var focused_id = '';
+                            var blankvalue_small = '';
+
+                            function getDistance()
+                            {
+                                $('#calculateBtn').addClass('loading');
+
+                                var fromColor = rgbToHEX($('#fromtext').css('background-color'));
+                                var toColor = rgbToHEX($('#totext').css('background-color'));
+
+                                // Reset the result/status messages.
+                                displayCalcError("");
+
+                                // Put selection options into text input boxes for later processing, if needed
+                                if (document.getElementById("fromselect").style.display != "none")
+                                {
+                                    if ($("#fromselect").val() != 0)
+                                    {
+                                        document.getElementById("fromtext").value = document.getElementById("fromselect").value;
+
+                                        var fromtextinput = document.getElementById("fromtext");
+                                        var fromselectinput = document.getElementById("fromselect");
+
+                                        fromselectinput.style.display = "none";
+                                        fromtextinput.style.display = "block";
+                                    }
+                                }
+
+                                if (document.getElementById("toselect").style.display != "none")
+                                {
+                                    if ($("#toselect").val() != 0)
+                                    {
+                                        document.getElementById("totext").value = document.getElementById("toselect").value;
+
+                                        var totextinput = document.getElementById("totext");
+                                        var toselectinput = document.getElementById("toselect");
+
+                                        toselectinput.style.display = "none";
+                                        totextinput.style.display = "block";
+                                    }
+                                }
+
+                                // Check these values to make sure they are populated
+                                var checkThese = new Array("fromtext"
+                                                , "totext"
+                                                , "automake"
+                                                , "automodel"
+                                                , "condition"
+                                                , "trailer"
+                                                );
+
+                                for(var i = 0; i < checkThese.length; i++)
+                                {
+                                    var selectElem = document.getElementById(checkThese[i]);
+
+                                    if (selectElem != null)
+                                    {
+                                        var selectText = selectElem.value;
+
+                                        //alert("Checking type[" + selectElem.type + "] value[" + selectText + "]");
+
+                                        if(selectText == null || selectText == undefined || selectText == '' || selectText == blankvalue_small)
+                                        {
+
+                                            if (selectElem.type == "text") selectElem.style.backgroundColor = "#FAAFAF";
+                                            else if (selectElem.type == "select-one")
+                                            {
+                                                selectElem.style.color = "#F66";
+                                                selectElem.style.borderColor = "#F66";
+                                                selectElem.style.fontWeight = "bold";
+                                            }
+                                            selectElem.focus();
+                                            //displayCalcError("Missing or invalid value.");
+                                            $('#calculateBtn').removeClass('loading');
+                                            return false;
+                                        }
+                                        else
+                                        {
+                                            if (selectElem.type == "text") selectElem.style.backgroundColor = "";
+                                            else if (selectElem.type == "select-one")
+                                            {
+                                                selectElem.style.color = "#3F5DA4";
+                                                selectElem.style.fontWeight = "normal";
+                                            }
+                                        }
+                                    }
+                                }
+
+                                var addrtext1 = $('#fromtext').val();
+                                var addrtext2 = $('#totext').val();
+                                continueSubmit = true;
+
+                                $.ajax({
+                                    type: "GET",
+                                    url: "http://www.montway.com/quote/geodata?addrtext1=" + addrtext1 + "&addrtext2=" + addrtext2,
+                                    //data: params,
+                                    dataType: 'json',
+                                    success: function (data) {
+
+
+                                        if (fromColor == '#F7C8CA')
+                                        {
+                                            if (!isNaN($('#fromtext').val()))
+                                            {
+                                                //alert('The zip code entered in the field "Ship car from" is invalid. Please try another zip code OR city name.');
+                                            }
+
+                                            if (isNaN($('#fromtext').val()))
+                                            {
+                                                //alert('The city name entered in the field "Ship car from" is invalid. Please check the spelling OR use a zip code.');
+                                            }
+                                            $('#fromtext').focus();
+                                        }
+                                        else if (toColor == '#F7C8CA')
+                                        {
+                                            if (!isNaN($('#totext').val()))
+                                            {
+                                                //alert('The zip code entered in the field "Ship car to" is invalid. Please try another zip code OR city name.');
+                                            }
+
+                                            if (isNaN($('#totext').val()))
+                                            {
+                                                //alert('The city name entered in the field "Ship car to" is invalid. Please check the spelling OR use a zip code.');
+                                            }
+                                            $('#totext').focus();
+                                        }
+
+                                        if (data.distance != null)
+                                        {
+                                            checkReturnedData(
+                                                data,
+                                                function(code, result)
+                                                {
+                                                    if (code != null && result != null)
+                                                    {
+                                                        if (code == "from" || code == "to")
+                                                        {
+                                                            displayCityStateOptions(code, result, true);
+                                                        }
+                                                        else
+                                                        {
+                                                            var errorElem;
+                                                            if (code == "fromerror" || code == "from") errorElem = document.getElementById("fromtext");
+                                                            if (code == "toerror" || code == "to") errorElem = document.getElementById("totext");
+
+                                                            if (errorElem != null) errorElem.style.backgroundColor = "#FAAFAF";
+
+                                                            var t = typeof result;
+
+                                                            if (t == 'object')
+                                                            {
+                                                                result = "Please try again, using the zip code. Otherwise, please check the spelling of city and state and try again.[111]";
+                                                                displayCalcError(result);
+                                                            }
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        displayCalcError("Unspecified Error has occurred. Please let us know.");
+                                                    }
+                                                }
+                                            );
+                                        }
+                                        else
+                                        {
+                                            alert("Could not calculate distance between Pick-up and Drop-off locations. Please check the entered Zip OR City, State and try again. If you have any questions please call Toll free 1-888-666-8929.");
+                                        }
+
+                                        $('#calculateBtn').removeClass('loading');
+                                    },
+                                    error: function(jqXHR, textStatus, errorThrown)
+                                    {
+                                        alert(textStatus);
+                                        $('#calculateBtn').removeClass('loading');
+                                    }
+                                });
+                            }
+
+                            $(document).ready(function() {
+                                setupMakeModel();
+
+                				$('#automake, #automodel').change(function(){
+                					$('#automake').parent().find('span.text').html($('#automake').val()?$('#automake').val():'Select Make');
+                					$('#automodel').parent().find('span.text').html($('#automodel').val()?$('#automodel').val():'Select Model');
+                				});
+
+                                $('.city_input')
+                                    .keydown(function(e){
+                                        if ($(this).val() == '')
+                                        {
+                                            if(e.keyCode == 8 || e.keyCode == 46 || e.keyCode == 37 || e.keyCode == 39)
+                                            {
+                                                return false;
+                                            }
+                                            else
+                                            {
+                                                $(this).val('');
+                                                $(this).css({ 'color' : '#3F5DA4' });
+                                            }
+                                        }
+                                    })
+                                    .keyup(function(e){
+                                        if ($(this).val().length == 0)
+                                        {
+                                            $(this).val('');
+                                            $(this).css({ 'background' : '#fff' });
+                                            setGreyAndCaretAtPos($(this).attr('id'), 0, '');
+                                        }
+                                        else if (!isNaN($(this).val()))
+                                        {
+                                            $(this).attr('maxlength', '5');
+                                        }
+                                        else
+                                        {
+                                            $(this).attr('maxlength', '255');
+                                        }
+
+                                        if (e.keyCode != 13 && e.keyCode != 40 && e.keyCode != 38 && e.keyCode != 9 && e.keyCode != 16 && e.keyCode != 27 && $(this).val() != '')
+                                        {
+                                            autocomplete_cities($(this).attr('id'), 'index.php', 1, e.keyCode, 1);
+                                        }
+                                    })
+                                    .focus(function(){
+                                        focused_class = $(this).attr('class');
+                                        focused_id = $(this).attr('id');
+                                        setGreyAndCaretAtPos($(this).attr('id'), 0, '');
+                                    })
+                                    .mouseup(function(e){
+                                        if (e.which == 3)
+                                        {
+                                            focused_id = $(this).attr('id');
+                                            focused_class = $(this).attr('class');
+
+                                            if (focused_class.indexOf('city_input') != -1 && $(this).val() == '')
+                                            {
+                                                $(this).css({ 'color' : '#3F5DA4' });
+                                                $('#' + focused_id).val('');
+                                            }
+                                            else if (focused_class.indexOf('city_input') == -1 && $(this).val() != '')
+                                            {
+                                                $(this).css({ 'color' : '#3F5DA4' });
+                                                $('#' + focused_id).val('');
+                                                focused_class = "";
+                                                focused_id = "";
+                                            }
+                                            else {}
+                                        }
+                                    })
+                                    .blur(function(){
+                                        $(this).val($(this).val().trim());
+                                        if ($(this).val() == '')
+                                        {
+                                            $(this).css({ 'color' : '#3F5DA4' });
+                                            $(this).css({ 'background-color' : '#fff' });
+                                        }
+                                        else if ($(this).val() == '')
+                                        {
+                                            $(this).val('');
+                                            $(this).css({ 'color' : '#3F5DA4' });
+                                            $(this).css({ 'background-color' : '#fff' });
+                                        }
+                                        else
+                                        {
+                                            var el = $(this);
+                                            $.ajax({
+                                                url: 'index.php',
+                                                type: 'POST',
+                                                data: 'ajax=getCitiesWithStates&query=' + $(this).val() + '&like=0&blur=1',
+                                                dataType: 'json',
+                                                async: false,
+                                                success: function(response)
+                                                {
+                                                    if (response.length == 0)
+                                                    {
+                                                        el.css({'background-color' : '#F7C8CA'});
+                                                    }
+                                                    else
+                                                    {
+                                                        el.css({'background-color' : '#fff'});
+                                                    }
+                                                }
+                                            });
+                                        }
+                                    })
+                                    .click(function(){
+                                        setGreyAndCaretAtPos($(this).attr('id'), 0, '');
+                                    });
+
+                                $('#fromselect')
+                                    .change(function(){
+                                        $('#from_select_error').css({ 'display' : 'none' });
+                                    });
+
+                                $('#toselect')
+                                    .change(function(){
+                                        $('#to_select_error').css({ 'display' : 'none' });
+                                    });
+                            });
+            </script>
+        <script type="text/javascript">
+                window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"4043f96e4d","applicationID":"14025934","transactionName":"bgFUZUFYV0VYWkxQDFdLY0NaFlhQX1BUUAJNARhBW0k=","queueTime":0,"applicationTime":1,"atts":"QkZXEwlCREs=","errorBeacon":"bam.nr-data.net","agent":"js-agent.newrelic.com\/nr-632.min.js"}
+        </script>
+    </body>
+</html>
+
