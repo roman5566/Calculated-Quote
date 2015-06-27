@@ -1,0 +1,793 @@
+/* ===========================> Global */
+#quote-calculator {
+    background: #4e6faa;
+    text-shadow: 0 -1px 0 #56689F;
+    text-rendering: optimizeLegibility;
+    letter-spacing: .08em;
+    position: relative;
+}
+.container {
+    margin: 0 auto;
+    max-width: 600px;
+}
+.action-box {
+    margin-top: 10px;
+}
+.logo {
+    display: block;
+    margin: 0 auto;
+    max-width: 250px;
+    width: 100%;
+}
+.icon {
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+}
+img {border:0;}
+hr {
+    border:none;
+    border-bottom: 1px dotted #66B1D4;
+    margin: 10px 0;
+}
+
+/* Type */
+h1,h2,h3,h4,h5 {
+    margin-top: 0;
+}
+a  {
+    color: #F8F7D5;
+}
+em {
+    color: white;
+}
+ul {
+    padding-left: 18px;
+}
+ul li {
+    margin-bottom: 10px;
+}
+p:first-child {
+    margin-top: 0;
+}
+p {
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+.callout-label {
+    color: #EFF1F9;
+}
+.callout-important {
+    color:white;
+    font-family: 'Droid Sans Mono', sans-serif;
+    font-weight:normal;
+}
+.nowrap { white-space: nowrap; }
+.slogan {
+    margin:10px 0;
+    text-align: center;
+}
+
+/* Buttons */
+.btn {
+    background: white;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    -webkit-border-radius: 16px;
+       -moz-border-radius: 16px;
+            border-radius: 16px;
+    -webkit-box-shadow: 0 1px 3px rgba(63, 93, 164,1);
+       -moz-box-shadow: 0 1px 3px rgba(63, 93, 164,1);
+            box-shadow: 0 1px 3px rgba(63, 93, 164,1);
+    border:1px solid #56689F;
+    color: #3A68B0;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 32px;
+    height: 32px;
+    padding: 0 16px;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0 1px 1px rgba(255,255,255,.5);
+    white-space: nowrap;
+}
+.btn:hover  {
+    background: #9ac225;
+    color: white;
+    text-shadow: 0 -1px 1px rgba(0,0,0,.25);
+}
+.btn:active {
+    background: #71b245;
+    -webkit-box-shadow: inset 0 1px 3px rgba(63, 93, 164,.5),
+                              0 0px 0px 1px rgba(255,255,255,.15);
+       -moz-box-shadow: inset 0 1px 3px rgba(63, 93, 164,.5),
+                              0 0px 0px 1px rgba(255,255,255,.15);
+            box-shadow: inset 0 1px 3px rgba(63, 93, 164,.5),
+                              0 0px 0px 1px rgba(255,255,255,.15);
+    color: #3A68B0;
+    text-shadow: none;
+}
+
+.btn-small  {
+    background: #4e6faa;
+    -webkit-box-shadow: inset 0 1px 0px rgba(255,255,255,.25),
+                              0 1px 0px 0px rgba(255,255,255,.1);
+       -moz-box-shadow: inset 0 1px 0px rgba(255,255,255,.25),
+                              0 1px 0px 0px rgba(255,255,255,.1);
+            box-shadow: inset 0 1px 0px rgba(255,255,255,.25),
+                              0 1px 0px 0px rgba(255,255,255,.1);
+    border-color: #3F5DA4;
+    color: #8CB7E3;
+    font-size: 12px;
+    height: 24px;
+    line-height: 24px;
+    text-transform: lowercase;
+    text-shadow: 0 -1px 0px rgba(0,0,0,.25);
+}
+.btn-large  {
+    -webkit-border-radius: 4px;
+       -moz-border-radius: 4px;
+            border-radius: 4px;
+    font-size: 16px;
+    line-height: 48px;
+    height: 48px;
+}
+.btn-block  {
+    display: block;
+    padding:0;
+    width: 100%;
+}
+.btn-submit {
+    background: #9ac225;
+    background: -moz-linear-gradient(top, #9ac225 0%, #78b543 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#9ac225), color-stop(100%,#78b543));
+    background: -webkit-linear-gradient(top, #9ac225 0%,#78b543 100%);
+    background: -o-linear-gradient(top, #9ac225 0%,#78b543 100%);
+    background: -ms-linear-gradient(top, #9ac225 0%,#78b543 100%);
+    background: linear-gradient(to bottom, #9ac225 0%,#78b543 100%);
+    border:1px solid #56689F;
+    -webkit-box-shadow: inset 0 0px 0px 1px rgba(255,255,255,.25),
+                              0 1px 1px rgba(63, 93, 164,.5);
+       -moz-box-shadow: inset 0 0px 0px 1px rgba(255,255,255,.25),
+                              0 1px 1px rgba(63, 93, 164,.5);
+            box-shadow: inset 0 0px 0px 1px rgba(255,255,255,.25),
+                              0 1px 1px rgba(63, 93, 164,.5);
+    color: white;
+    text-shadow: 0 -1px 1px rgba(0,0,0,.25);
+}
+
+/* Clearfix */
+.clearfix { *zoom:1 }
+.clearfix:before,
+.clearfix:after { display:table;content:""; }
+.clearfix:after { clear:both; }
+
+/* ===========================> Scaffolding */
+.span6 {
+    float: left;
+    margin-left: 0;
+    margin-right: 2%;
+    width:48%;
+}
+.span6:last-child {
+    margin-left:2%;
+    margin-right: 0;
+}
+
+/* ===========================> Form */
+.loading,
+.loading:hover,
+.loading:active,
+.loading:focus {
+    background: #9ac225 url(loading-green.gif) repeat-x center center;
+    -webkit-box-shadow: inset 0 1px 3px rgba(63, 93, 164,.5),
+                              0 0px 0px 1px rgba(255,255,255,.15);
+       -moz-box-shadow: inset 0 1px 3px rgba(63, 93, 164,.5),
+                              0 0px 0px 1px rgba(255,255,255,.15);
+            box-shadow: inset 0 1px 3px rgba(63, 93, 164,.5),
+                              0 0px 0px 1px rgba(255,255,255,.15);
+}
+
+select:focus,
+input:focus { outline: none; }
+select::-moz-focus-inner { border: 0 !important; outline: 0 none !important; }
+input[type="submit"]:focus,
+input[type="button"]:focus{ outline : none; }
+
+fieldset {
+    border:none;
+    border-bottom: 1px solid #56689F;
+    -webkit-box-shadow: 0 1px 0 rgba(255,255,255,.35);
+       -moz-box-shadow: 0 1px 0 rgba(255,255,255,.35);
+            box-shadow: 0 1px 0 rgba(255,255,255,.35);
+    margin: 15px 0;
+    padding: 0;
+}
+fieldset:first-child {
+    margin-top: 0;
+}
+input::-webkit-input-placeholder,
+input::-moz-placeholder,
+input:-ms-input-placeholder,
+input:-moz-placeholder  { color:#f00 !important; }
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+.calculator-input {
+    border:1px solid #56689F;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    -webkit-border-radius: 4px;
+       -moz-border-radius: 4px;
+            border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 3px rgba(63, 93, 164,.65),
+                              0 0px 0px 1px rgba(255,255,255,.35);
+       -moz-box-shadow: inset 0 1px 3px rgba(63, 93, 164,.65),
+                              0 0px 0px 1px rgba(255,255,255,.35);
+            box-shadow: inset 0 1px 3px rgba(63, 93, 164,.65),
+                              0 0px 0px 1px rgba(255,255,255,.35);
+    color: #56689F;
+    height: 32px;
+    font-size: 14px;
+    line-height: 32px;
+    padding: 0;
+    margin-bottom: 15px;
+    text-indent: 5px;
+    vertical-align: middle;
+}
+.calculator-input:focus,
+select:focus {
+    border-color: #93E9FF;
+    -webkit-box-shadow: inset 0 1px 3px rgba(63, 93, 164,.65),
+                              0 0px 10px #2ED4FF;
+       -moz-box-shadow: inset 0 1px 3px rgba(63, 93, 164,.65),
+                              0 0px 10px #2ED4FF;
+            box-shadow: inset 0 1px 3px rgba(63, 93, 164,.65),
+                              0 0px 10px #2ED4FF;
+    outline: 0;
+}
+
+.input-wide {
+	-webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    display: block;
+    width: 100%;
+}
+
+select {
+    background: white;
+    border:1px solid #56689F;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    -webkit-border-radius: 4px;
+       -moz-border-radius: 4px;
+            border-radius: 4px;
+    color: #56689F;
+    display: block;
+    font-size: 14px;
+    height: 32px;
+    line-height: 32px;
+    padding: 5px;
+    margin: 0 0 15px 0;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.form-horizontal .control-group {
+    background: #EFF1F9;
+    -webkit-border-radius: 4px;
+       -moz-border-radius: 4px;
+            border-radius: 4px;
+    -webkit-box-shadow: 0 0px 0px 1px rgba(255,255,255,.35);
+       -moz-box-shadow: 0 0px 0px 1px rgba(255,255,255,.35);
+            box-shadow: 0 0px 0px 1px rgba(255,255,255,.35);
+    border:1px solid #56689F;
+    color: #56689F;
+    margin: 0 0 15px 0;
+    padding: 10px;
+    text-shadow: 0 1px 1px rgba(255,255,255,.35);
+}
+.form-horizontal .control-label {
+    float: left;
+    font-weight: bold;
+    text-align: left;
+    width: 55%;
+    position: relative;
+}
+.form-horizontal .control-label a {
+    display: inline-block;
+    color: inherit;
+    text-decoration: none;
+}
+.form-horizontal .control-label .icon {
+    line-height: 32px;
+    vertical-align: top;
+}
+.form-horizontal .controls {
+    color: #555;
+    font-weight: bold;
+    text-align: left;
+    margin-left: 55%;
+}
+
+.form-horizontal .controls .radio {
+    display: block;
+}
+
+.info-table {
+    background: #EFF1F9;
+    -webkit-border-radius: 4px;
+       -moz-border-radius: 4px;
+            border-radius: 4px;
+    -webkit-box-shadow: 0 0px 0px 1px rgba(255,255,255,.35);
+       -moz-box-shadow: 0 0px 0px 1px rgba(255,255,255,.35);
+            box-shadow: 0 0px 0px 1px rgba(255,255,255,.35);
+    border:1px solid #56689F;
+    color: #56689F;
+    margin: 0 0 15px 0;
+    text-shadow: 0 1px 1px rgba(255,255,255,.35);
+    overflow: hidden;
+}
+.info-table .info-row {
+    border-bottom: 1px dotted #bbb;
+    padding:10px;
+}
+.info-table .info-row:last-child {
+    border-bottom: none;
+}
+.info-table .info-row:nth-child(odd) {
+    background: #DEE0EC;
+}
+.info-table .info-header {
+    float: left;
+    font-weight: bold;
+    text-align: left;
+    width: 55%;
+    position: relative;
+}
+.info-table .info-content {
+    color: #555;
+    font-weight: normal;
+    text-align: left;
+    margin-left: 55%;
+}
+
+.info-table .price-row .info-content .price {
+    color: #66B1D4;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 40px;
+}
+
+/* ===========================> jQuery UI Custom Overrides */
+#quote-calculator .ui-widget-content {
+    background: #333;
+    border: 1px solid #333;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    -webkit-border-radius: 4px;
+       -moz-border-radius: 4px;
+            border-radius: 4px;
+    -webkit-box-shadow: inset 0  1px   0px rgba(255,255,255,.25),
+                              0  1px  10px rgba(0,0,0,.75);
+       -moz-box-shadow: inset 0  1px   0px rgba(255,255,255,.25),
+                              0  1px  10px rgba(0,0,0,.75);
+            box-shadow: inset 0  1px   0px rgba(255,255,255,.25),
+                              0  1px  10px rgba(0,0,0,.75);
+    color: white;
+    font-size: 12px !important;
+    font-weight: normal;
+    line-height: 16px !important;
+    padding: 5px;
+    text-align: left;
+    text-shadow: 0 -1px 1px rgba(0,0,0,.75);
+    width: 100%;
+}
+#quote-calculator .ui-widget-content a {
+    color: white;
+}
+#quote-calculator .ui-widget-content a.ui-state-hover {
+    background: #F8F7D5;
+    background: -moz-linear-gradient(top, #F8F7D5 0%, #D9B481 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#F8F7D5), color-stop(100%,#D9B481));
+    background: -webkit-linear-gradient(top, #F8F7D5 0%,#D9B481 100%);
+    background: -o-linear-gradient(top, #F8F7D5 0%,#D9B481 100%);
+    background: -ms-linear-gradient(top, #F8F7D5 0%,#D9B481 100%);
+    background: linear-gradient(to bottom, #F8F7D5 0%,#D9B481 100%);
+    -webkit-border-radius: 3px;
+       -moz-border-radius: 3px;
+            border-radius: 3px;
+    border: 1px solid #222;
+    -webkit-box-shadow: inset 0  1px  0px rgba(255,255,255,.25),
+                              0  1px  10px rgba(0,0,0,.25);
+       -moz-box-shadow: inset 0  1px  0px rgba(255,255,255,.25),
+                              0  1px  10px rgba(0,0,0,.25);
+            box-shadow: inset 0  1px  0px rgba(255,255,255,.25),
+                              0  1px  10px rgba(0,0,0,.25);
+    color: #333;
+    cursor: pointer;
+    text-shadow: 0 1px 1px rgba(255,255,255,1);
+}
+
+/* ===========================> Header */
+.header-logo {
+    background: #4e6faa;
+    border-bottom: 1px solid #24356C;
+    -webkit-box-shadow: inset 0 -5px 25px #3F5DA4;
+       -moz-box-shadow: inset 0 -5px 25px #3F5DA4;
+            box-shadow: inset 0 -5px 25px #3F5DA4;
+    text-align: center;
+}
+.header-logo .container {
+    padding: 10px;
+}
+.header-logo .logo {
+    display: block;
+    margin: 0 auto;
+    max-width: 250px;
+    width: 100%;
+    max-height: 52px\9;
+}
+.header-logo h3 {
+    color: #8CB7E3;
+    line-height: 1;
+    margin-top: 5px;
+    margin-bottom: 0;
+    font-size: 16px;
+}
+
+/* ===========================> Content */
+.calculator {
+    background: #9daacd;
+    -webkit-box-shadow: inset 0 0 0 1px #B5C7FE,
+                              0 1px 5px #3F5DA4;
+       -moz-box-shadow: inset 0 0 0 1px #B5C7FE,
+                              0 1px 5px #3F5DA4;
+            box-shadow: inset 0 0 0 1px #B5C7FE,
+                              0 1px 5px #3F5DA4;
+    border-bottom: 1px solid #24356C;
+    color: white;
+    font-size: 16px;
+    line-height: 18px;
+    text-align: center;
+    text-shadow: 0 1px 1px rgba(63, 93, 164,1);
+}
+.calculator .container {
+    padding: 20px;
+}
+
+.shipping-with-montway-container,
+#quote-content {
+    color: white;
+    position: absolute;
+         top:0;
+        left:0;
+    text-shadow: 0 1px 1px rgba(63, 93, 164,1);
+    width: 100%;
+}
+.shipping-with-montway-container .container {
+    padding: 10px 20px 20px 20px;
+}
+.shipping-with-montway-container strong {
+    color: #DFEEFF;
+}
+#shipping-with-montway {
+    display: none;
+}
+
+.message-box {
+    color: #2A3E78;
+    font-weight: 600;
+    text-shadow: 0 1px 1px rgba(255,255,255,.35);
+    padding: 10px 80px;
+}
+.message-box .callout-label,
+.message-box .callout-important {
+    text-shadow: 0 1px 1px #2A3E78;
+}
+.message-box a.callout-important {
+    color: #F8F7D5;
+    font-family: inherit;
+}
+
+/* ===========================> Footer */
+.calculator-footer {
+    color: #8CB7E3;
+    text-align: center;
+    padding: 20px;
+}
+.calculator-footer .callout-important {
+    font-size: 20px;
+}
+.calculator-footer h3 {
+    font-size: 20px;
+}
+
+/* ===========================> Tooltip */
+.tooltip-container {
+    background-color: #333;
+    border: 1px solid #333;
+    -webkit-border-radius: 4px;
+       -moz-border-radius: 4px;
+            border-radius: 4px;
+    -webkit-box-shadow: inset 0  1px  0px rgba(255,255,255,.25),
+                              0  1px  10px rgba(0,0,0,.75);
+       -moz-box-shadow: inset 0  1px  0px rgba(255,255,255,.25),
+                              0  1px  10px rgba(0,0,0,.75);
+            box-shadow: inset 0  1px  0px rgba(255,255,255,.25),
+                              0  1px  10px rgba(0,0,0,.75);
+    color: white;
+    opacity: 0;
+    font-size: 12px !important;
+    font-weight: normal;
+    line-height: 16px !important;
+    text-align: left;
+    text-shadow: 0 -1px 1px rgba(0,0,0,.75);
+    position: absolute;
+      bottom: 30px;
+        left: 0;
+    white-space: normal;
+    width: 100%;
+    z-index: 200;
+}
+.tooltip-container .container {
+    padding: 20px;
+}
+.tooltip-container .caret {
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid #333;
+    font-size: 0;
+    line-height: 0;
+    margin:-1px auto 0;
+    position: absolute;
+      bottom: -8px;
+        left: 10px;
+    height:0px;
+    width:0px; 
+}
+.tooltip-container strong {
+    color: #DFEEFF;
+}
+.tooltip-container hr {
+    border-color: #555;
+}
+
+#tip_car-condition {
+    -webkit-box-shadow: inset 0  -1px  0px rgba(255,255,255,.25),
+                              0  1px  10px rgba(0,0,0,.75);
+       -moz-box-shadow: inset 0  -1px  0px rgba(255,255,255,.25),
+                              0  1px  10px rgba(0,0,0,.75);
+            box-shadow: inset 0  -1px  0px rgba(255,255,255,.25),
+                              0  1px  10px rgba(0,0,0,.75);
+    bottom: auto;
+       top: 30px;
+}
+#tip_car-condition .caret {
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid #333;
+    
+    bottom: auto;
+       top:-15px;
+}
+
+/* ===========================> Size-specific */
+@media (max-width: 320px)  {
+    #field_locations .span6 {
+        float: none;
+        margin: 0 !important;
+        width: 100%;
+    }
+    
+    .calculator-footer .callout-important { display: block; }
+}
+@media (max-width: 440px)  {
+    .message-box {
+        font-size: 11px;
+        line-height: 13px;
+        padding:10px;
+    }
+    .message-box .callout-label {
+        display: block;
+    }
+    .message-box .callout-important {
+        display: block;
+    }
+    .calculator .container {
+        font-size: 12px;
+        line-height: 14px;
+        padding: 5px;
+    }
+    .calculator-footer {
+        padding: 5px;
+    }
+    .calculator-footer .callout-important { font-size: 14px; }
+    .calculator-footer h3 { 
+        font-size: inherit;
+        margin:5px 0 8px; 
+    }
+    .calculator-input,
+    select {
+        font-size: 10px !important;
+        line-height: 10px !important;
+        padding: 3px;
+        margin: 0 0 5px 0 !important;
+    }
+    .ie8 .calculator-input,
+    select {
+        height: 24px !important;
+        line-height: 24px !important;
+    }
+    fieldset {
+        margin: 5px 0;
+    }
+    .slogan {
+        font-size: 12px;
+        line-height: 16px;
+    }
+    .form-horizontal .control-group,
+    .info-table {
+        font-size: 11px;
+        line-height: 13px;
+        margin: 0 0 10px 0;
+    }
+    .info-table .info-row {
+        padding: 5px;
+    }
+    .info-table .info-row:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+    }
+    .info-table .info-header {
+        float: none;
+        text-align: center;
+        margin-bottom: 5px;
+        width: 100%;
+        white-space: nowrap;
+    }
+    .info-table .info-content {
+        font-weight: normal;
+        text-align: center;
+        margin-left: 0;
+        padding-bottom: 3px;
+    }
+    .info-table .price-row .info-content .price {
+        font-size: 18px;
+        line-height: 10px;
+    }
+    .form-horizontal .control-label {
+        border-bottom: 1px dotted #bbb;
+        padding-bottom: 3px;
+        float: none;
+        text-align: left;
+        margin-bottom: 5px;
+        width: 100%;
+        white-space: nowrap;
+    }
+    .form-horizontal .control-label .icon {
+        line-height: 14px;
+        margin-right:0;
+        vertical-align: top;
+    }
+    .form-horizontal .controls {
+        text-align: left;
+        margin-left: 0;
+    }
+    .tooltip-container .container,
+    .shipping-with-montway-container .container {
+        padding: 10px;
+    }
+    .tooltip-container * {
+        font-size: 11px;
+        line-height: 13px;
+    }
+    .tooltip-container {
+        width: auto;
+        bottom: 30px;
+          left:-6px;
+         right:-6px;
+    }
+    .tooltip-container .caret { left: 5px; }
+    #tip_car-condition {
+           top: 30px;
+    }
+    .shipping-with-montway-container {
+        font-size: 10px;
+        line-height: 12px;
+    }
+}
+
+@media (max-width:225px) and (max-height: 410px) {
+    .header-logo .container {
+        padding: 5px;
+    }
+    .header-logo .logo {
+        height: 24px;
+        width: auto;
+    }
+    .form-horizontal .control-group {
+        padding: 5px;
+    }
+    .calculator-input,
+    select {
+        height: 24px !important;
+        line-height: 24px !important;
+    }
+    .btn-submit {
+        font-size: 14px !important;
+        line-height: 32px !important;
+        height: 32px !important;
+    }
+    fieldset {
+        -webkit-box-shadow: none;
+           -moz-box-shadow: none;
+                box-shadow: none;
+        border-bottom: none;
+        margin:5px 0;
+    }
+    #field_locations,
+    #field_vehicle-type {
+        margin: 0 !important;
+    }
+    #field_vehicle-type select {
+        margin-bottom: 0 !important;
+    }
+    .form-horizontal .control-group {
+        margin-bottom: 5px !important;
+    }
+    .info-table {
+        margin-bottom: 5px !important;
+    }
+    .calculator-footer h3 {
+        font-size: 11px;
+        margin-top:0 !important;
+    }
+    .calculator-footer .callout-important {
+        display: inline;
+        font-size: 12px !important;
+    }
+    .shipping-with-montway-container .logo {
+        display: none;
+    }
+}
+
+@media (max-width: 160px) and (max-height:600px)  {
+    .header-logo .container {
+        padding: 15px 10px;
+    }
+    .shipping-with-montway-container .container {
+        padding-top:15px;
+    }
+    ul li { margin-bottom: 5px; }
+    
+    .calculator-input { margin: 0 0 5px 0 !important; }
+    
+    .span6 {
+        float: none;
+        margin: 0 !important;
+        width: 100%;
+    }
+    .form-horizontal .control-group {
+        padding: 5px;
+        margin: 0 0 5px 0;
+    }
+    select { 
+        height: 24px;
+        margin: 0 0 5px 0;
+    }
+    .btn-submit {
+        font-size: 16px !important;
+        line-height: 48px !important;
+        height: 48px !important;
+    }
+}
